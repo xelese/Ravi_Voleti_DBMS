@@ -1,0 +1,21 @@
+answer.model.server.js:
+
+const mongoose = require('mongoose');
+const answerSchema = require('./answer.schema.server');
+const answerModel = mongoose.model('AnswerModel', answerSchema);
+module.exports = answerModel;
+
+answer.schema.server.js:
+
+const mongoose = require('mongoose');
+const answerSchema =
+    mongoose.Schema({
+                        _id: Number,
+                        trueFalseAnswer: Boolean,
+                        multipleChoiceAnswer: Number,
+                        student: {ref: 'studentModel',
+                            type: mongoose.Schema.Types.ObjectId},
+                        question: {ref: 'questionModel',
+                            type: mongoose.Schema.Types.ObjectId}
+                    }, {collection: 'answer'});
+module.exports = answerSchema;
