@@ -1,0 +1,13 @@
+if you are running UPDATE, INSERT AND DELETE QUERRIES
+
+1. RUN THEM WITH USE cs5200_fall2019_voleti; which are right above each querry.
+
+2. The Files are numbered in order of execution.
+
+3. AWS SERVER HOST: cs5200-fall2019-voleti.cnwbfkqaiv0g.us-east-1.rds.amazonaws.com
+
+4. PORT NUMBER: 3306
+
+5. USERNAME: admin
+
+6. PASSWORD 4657Ravi598!
