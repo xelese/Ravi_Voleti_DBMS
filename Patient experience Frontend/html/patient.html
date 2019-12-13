@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../js/profile.js"></script></head>
+</head>
+<body onload="loadPatientProfile()">
+	<div style="margin-left: 500px; ">
+	<button onclick="(async function log(){
+    	response = await fetch('http://localhost:8080/logout'
+		, {
+	    method: 'GET',
+	    credentials: 'include',
+		headers: {
+		    'Accept': 'application/json',
+		    'Content-Type': 'application/json'
+		  }
+  		});
+  		location = 'login.html';
+
+    	})()">Logout</button>
+    </div>
+	<div id="pappt" style="margin: 50px;">
+	</div>
+	<div style="margin: 50px;">
+		<span> Search Condition: &nbsp; <span>
+		<input type="text" id="searchCond" placeholder="Search for a condition">
+		<button onclick="showConditions()"> Search </button>
+	</div>
+	<div id="conditions">
+
+	</div>
+	<div style="margin: 50px;">
+		<span> Enter Condition to Search for Doctor: &nbsp; <span>
+		<input type="text" id="searchDoc" placeholder="Enter Condition">
+		<button onclick="showDoctors()"> Search </button>
+	</div>
+	<div id="doctors">
+
+	</div>
+
+	<div id="feedback" style="margin: 50px; display: none;">
+		<h2>Feedback</h2>
+		<div style="margin: 50px;">
+			<input type="Number" id="rate" placeholder="Rating from 1-5">
+			<input type="text" id="rev" placeholder="Enter review">
+			<br/>
+			<br/>
+			<br/>
+			<button id="sendfeed" onclick="addFeedback()">Add Feedback</button>
+		</div>
+	</div>
+
+</body>
+</html>

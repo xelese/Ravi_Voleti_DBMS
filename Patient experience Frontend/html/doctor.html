@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../js/profile.js"></script></head>
+
+	<title></title>
+</head>
+<body onload="loadDoctorProfile()">
+	<div style="margin-left: 500px; ">
+	<button onclick="(async function log(){
+    	response = await fetch('http://localhost:8080/logout'
+		, {
+	    method: 'GET',
+	    credentials: 'include',
+		headers: {
+		    'Accept': 'application/json',
+		    'Content-Type': 'application/json'
+		  }
+  		});
+  		location = 'login.html';
+
+    	})()">Logout</button>
+    </div>
+	<div id="doc-appointments" style="margin: 30px;">
+	</div>
+	<div style="margin: 30px;">
+		<button onclick="(function reg(){
+			window.location.href = 'conditions.html';
+
+		})()">Register for Conditions</button>
+	</div>
+	<div style="margin: 30px;">
+		<button onclick="(function reg2(){
+			window.location.href = 'locality.html';
+
+		})()">Register for Locations</button>
+	</div>
+	<div style="margin: 30px;">
+		<button onclick="(function reg2(){
+			window.location.href = 'dellocality.html';
+
+		})()">Delete Locations</button>
+	</div>
+	<div id="doc-rewards">
+		<h2>Rewards You can sign up for:</h2>
+		<br/>
+	</div>
+
+</body>
+</html>

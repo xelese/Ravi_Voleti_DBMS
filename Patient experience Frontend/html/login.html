@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../js/login.js"></script></head>
+<body>
+	<form action="javascript:;" onsubmit="onLogin(this)" name='login' style="border:1px solid #ccc" method="post">
+  <div class="container">
+    <h1>Login</h1>
+    <p>Please fill in this form to login.</p>
+    <hr>
+
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="type"><b>Select User type</b></label>
+    <select name="type">
+      <option value="patient">Patient</option>
+      <option value="doctor">Doctor</option>
+      <option value="appManager">Manager</option>
+    </select>
+
+    <div style="margin:20px;" class="clearfix">
+      <button type="submit" class="signupbtn">Login</button>
+    </div>
+  </div>
+</form>
+</body>
+</html>

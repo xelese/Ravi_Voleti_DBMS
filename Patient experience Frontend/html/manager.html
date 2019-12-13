@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../js/profile.js"></script></head>
+
+	<title></title>
+</head>
+<body onload="loadManager()">
+	<div style="margin-left: 500px; ">
+	<button onclick="(async function log(){
+    	response = await fetch('http://localhost:8080/logout'
+		, {
+	    method: 'GET',
+	    credentials: 'include',
+		headers: {
+		    'Accept': 'application/json',
+		    'Content-Type': 'application/json'
+		  }
+  		});
+  		location = 'login.html';
+
+    	})()">Logout</button>
+    </div>
+	<div style="margin: 30px;">
+		<button onclick="updatePat()">View, Delete and Update Patients</button>
+		<button onclick="updateDoc()">View, Delete and Update Doctors</button>
+		<button onclick="updateLoc()">View, Delete and Update Locations</button>
+
+	</div>
+	<h2>Create Location</h2>
+	<div style="margin: 50px;">
+		<input type="text" id="loc" placeholder="New location name">
+		<input type="text" id="add" placeholder="New Address for location">
+
+		<button onclick="addLocation()">Add new location</button>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<h2>Create Reward</h2>
+	<div style="margin: 50px;">
+		<input type="text" id="desc" placeholder="Reward Description">
+		<input type="text" id="count" placeholder="Number of such rewards">
+		<input type="text" id="rloc" placeholder="location to offer this reward">
+		<br/>
+		<br/>
+		<br/>
+		<span> Enter Medicine if you want to create Free reward</span>
+		<input type="text" id="med" placeholder="Medicine">
+		<br/>
+		<br/>
+		<span> Enter Amount if you want to create Discount reward</span>
+		<input type="text" id="amt" placeholder="Amount">
+		<label for="type"><b>Select Reward type</b></label>
+	    <select id="rtype">
+	      <option value="free">Free</option>
+	      <option value="discount">Discount</option>
+	    </select>
+		<button onclick="addReward()">Add new Reward</button>
+	</div>
+	<div id="allFeedback" style="margin: 50px;">
+		<h2>All Feedbacks Given By Patient</h2>
+	</div>
+</body>
+</html>
